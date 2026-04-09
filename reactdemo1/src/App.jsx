@@ -13,7 +13,7 @@ const C = {
   borderMd: "rgba(123,29,46,0.3)",
 };
 
-const NAV_LINKS = ["Home", "Menu", "About", "Gallery", "Contact"];
+const NAV_LINKS = ["Home", "Menu", "About", "Gallery", "Contact", "Help"];
 
 const DISHES = [
   {
@@ -203,46 +203,123 @@ const PORTFOLIO_ITEMS = [
   },
 ];
 
+/* ─── 10 FAQs ────────────────────────────────────────────── */
+const FAQS = [
+  {
+    category: "Reservations",
+    icon: "📅",
+    question: "How far in advance should I make a reservation?",
+    answer:
+      "We recommend booking at least 2–3 weeks in advance, especially for weekend evenings and special occasions. For festive seasons like Diwali, Christmas, or New Year's Eve, reservations often fill up 4–6 weeks ahead. Walk-ins are welcome based on availability, but cannot be guaranteed.",
+  },
+  {
+    category: "Reservations",
+    icon: "📅",
+    question: "Can I modify or cancel my reservation?",
+    answer:
+      "Yes, reservations can be modified or cancelled up to 24 hours before your booking with no charge. Cancellations made within 24 hours may incur a cancellation fee of ₹500 per guest. To make changes, please call us at +91 22 4001 9999 or email reserve@fahhhh.in.",
+  },
+  {
+    category: "Dining",
+    icon: "🍽️",
+    question: "Do you accommodate dietary restrictions and allergies?",
+    answer:
+      "Absolutely. Our kitchen team is well-versed in handling all major dietary requirements including vegetarian, vegan, gluten-free, nut-free, and Jain diets. Please inform us of any allergies or restrictions at the time of booking so Chef Laurent's team can prepare accordingly. We take food safety very seriously.",
+  },
+  {
+    category: "Dining",
+    icon: "🍽️",
+    question: "What is the dress code at Fahhhhh!!!?",
+    answer:
+      "We maintain a smart-casual to formal dress code to preserve the ambience our guests expect. We kindly request no athletic wear, shorts, or flip-flops. Gentlemen are encouraged to wear collared shirts; formal Indian attire is always welcome and celebrated. Our team may politely decline entry to guests not meeting the dress standard.",
+  },
+  {
+    category: "Dining",
+    icon: "🍽️",
+    question: "Is the restaurant child-friendly?",
+    answer:
+      "Fahhhhh!!! is designed primarily as an adult fine-dining experience. Children above the age of 10 are welcome, provided they are comfortable in a formal dining setting. We do not offer a dedicated children's menu but can adapt dishes upon request. We appreciate your understanding in maintaining a tranquil atmosphere for all guests.",
+  },
+  {
+    category: "Orders & Payment",
+    icon: "💳",
+    question: "What payment methods do you accept?",
+    answer:
+      "We accept all major credit and debit cards (Visa, Mastercard, Amex), UPI payments (GPay, PhonePe, Paytm), and cash in Indian Rupees. A 5% service charge is applied to all bills. GST is applicable as per government regulations. We do not accept foreign currency or traveller's cheques.",
+  },
+  {
+    category: "Orders & Payment",
+    icon: "💳",
+    question: "Can I pre-order dishes or arrange a set menu for a group?",
+    answer:
+      "Yes! For groups of 8 or more, we offer bespoke set menus curated by Chef Laurent to suit your preferences and budget. Pre-ordering selected dishes is also available for large parties. Please reach out to our events team at reserve@fahhhh.in at least 5 days prior to your visit to discuss your requirements.",
+  },
+  {
+    category: "Events & Private Dining",
+    icon: "🥂",
+    question: "Do you host private events and corporate dinners?",
+    answer:
+      "Yes, we have a dedicated private dining room — The Moreau Suite — that seats up to 30 guests, perfect for corporate dinners, milestone celebrations, product launches, and intimate gatherings. Full AV equipment, customised menus, and a dedicated butler service are available. Enquire via reserve@fahhhh.in for packages and pricing.",
+  },
+  {
+    category: "Events & Private Dining",
+    icon: "🥂",
+    question: "Can I bring my own cake for a birthday or anniversary?",
+    answer:
+      "We welcome celebratory cakes brought in from outside, subject to a corkage fee of ₹800. Please inform us in advance so our team can arrange appropriate plating and presentation. We also offer in-house celebration dessert platters and personalised cake orders through our pastry kitchen — ask us for details.",
+  },
+  {
+    category: "General",
+    icon: "ℹ️",
+    question: "Is there parking available at the restaurant?",
+    answer:
+      "Yes, we offer complimentary valet parking for all dining guests at our Napean Sea Road location. The valet is available from 11:00 AM to midnight. For guests arriving by cab or auto-rickshaw, our entrance is easily accessible from the main road. Nearby public parking is also available on Carmichael Road.",
+  },
+];
+
+const FAQ_CATEGORIES = [
+  "All",
+  "Reservations",
+  "Dining",
+  "Orders & Payment",
+  "Events & Private Dining",
+  "General",
+];
+
 const GLOBAL_CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Lato:wght@300;400;700&display=swap');
   *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-  body { background:${C.bg}; font-family:'Lato',sans-serif; color:${C.text}; }
-  input::placeholder, textarea::placeholder { color:${C.muted}; opacity:0.55; }
+  body { background:#FDF6F0; font-family:'Lato',sans-serif; color:#2C1015; }
+  input::placeholder, textarea::placeholder { color:#7A4050; opacity:0.55; }
   input[type="date"]::-webkit-calendar-picker-indicator { opacity:0.5; cursor:pointer; }
   ::-webkit-scrollbar { width:5px; }
-  ::-webkit-scrollbar-track { background:${C.bg}; }
-  ::-webkit-scrollbar-thumb { background:${C.maroon}; border-radius:3px; }
-
+  ::-webkit-scrollbar-track { background:#FDF6F0; }
+  ::-webkit-scrollbar-thumb { background:#7B1D2E; border-radius:3px; }
   @keyframes splashIn  { from{opacity:0;transform:scale(0.93)} to{opacity:1;transform:scale(1)} }
   @keyframes splashOut { from{opacity:1} to{opacity:0;pointer-events:none} }
   @keyframes letterPop { 0%{opacity:0;transform:translateY(16px)} 65%{transform:translateY(-3px)} 100%{opacity:1;transform:translateY(0)} }
   @keyframes bounce    { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-8px)} }
   @keyframes fadeSlideUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
   @keyframes rotateSlow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-  @keyframes pulse { 0%,100%{opacity:0.6} 50%{opacity:1} }
-
-  .dish-img  { transition:transform 0.55s ease; }
+  @keyframes faqOpen { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+  .dish-img { transition:transform 0.55s ease; }
   .dish-card:hover .dish-img { transform:scale(1.06); }
   .dish-card { transition:box-shadow 0.3s,transform 0.3s; }
   .dish-card:hover { transform:translateY(-5px); box-shadow:0 14px 36px rgba(123,29,46,0.12); }
-
-  .usp-card  { transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
-  .usp-card:hover { transform:translateY(-4px); box-shadow:0 10px 28px rgba(123,29,46,0.1); border-color:${C.maroon} !important; }
-
+  .usp-card { transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; }
+  .usp-card:hover { transform:translateY(-4px); box-shadow:0 10px 28px rgba(123,29,46,0.1); border-color:#7B1D2E !important; }
+  .faq-item { transition:box-shadow 0.3s,border-color 0.3s; }
+  .faq-item:hover { border-color:rgba(123,29,46,0.35) !important; box-shadow:0 4px 18px rgba(123,29,46,0.08); }
   .btn-primary { transition:background 0.3s,box-shadow 0.3s,transform 0.2s; }
-  .btn-primary:hover { background:${C.maroonLt} !important; box-shadow:0 6px 20px rgba(123,29,46,0.28); transform:translateY(-1px); }
+  .btn-primary:hover { background:#A5294A !important; box-shadow:0 6px 20px rgba(123,29,46,0.28); transform:translateY(-1px); }
   .btn-primary:active { transform:translateY(0); }
   .btn-outline { transition:background 0.3s,color 0.3s,border-color 0.3s; }
-  .btn-outline:hover { background:${C.maroon} !important; color:#fff !important; }
-
+  .btn-outline:hover { background:#7B1D2E !important; color:#fff !important; }
   @media (max-width:767px) { .desktop-nav,.book-btn { display:none !important; } }
   @media (min-width:768px) { .hamburger { display:none !important; } }
 `;
 
-/* ─── LOGO SVG COMPONENT ─────────────────────────────────── */
 function Logo({ variant = "dark", size = "md" }) {
-  // variant: "dark" | "light"
-  // size: "sm" | "md" | "lg"
   const sizes = {
     sm: { emblem: 32, total: 140 },
     md: { emblem: 38, total: 170 },
@@ -253,12 +330,8 @@ function Logo({ variant = "dark", size = "md" }) {
   const textColor = variant === "light" ? "#fff" : C.text;
   const exclamColor = variant === "light" ? "#FFB3C6" : C.maroon;
   const taglineColor = variant === "light" ? "rgba(255,255,255,0.6)" : C.muted;
-  const emblemTextSize = s.emblem * 0.28;
-  const wordmarkSize = s.emblem * 0.58;
-  const taglineSize = s.emblem * 0.2;
   const wordmarkX = s.emblem + 10;
   const svgH = s.emblem + 2;
-
   return (
     <svg
       width={s.total}
@@ -267,9 +340,7 @@ function Logo({ variant = "dark", size = "md" }) {
       xmlns="http://www.w3.org/2000/svg"
       aria-label="Fahhhhh!!! Fine Dining"
     >
-      {/* Emblem circle */}
       <circle cx={r + 1} cy={r + 1} r={r} fill={C.maroon} />
-      {/* Inner ring decoration */}
       <circle
         cx={r + 1}
         cy={r + 1}
@@ -278,7 +349,6 @@ function Logo({ variant = "dark", size = "md" }) {
         stroke="rgba(255,255,255,0.2)"
         strokeWidth="0.7"
       />
-      {/* Tiny fork & knife icon paths centered */}
       <line
         x1={r + 1 - r * 0.22}
         y1={r + 1 - r * 0.42}
@@ -297,7 +367,6 @@ function Logo({ variant = "dark", size = "md" }) {
         strokeWidth="1.2"
         strokeLinecap="round"
       />
-      {/* Fork tines */}
       <line
         x1={r + 1 - r * 0.22}
         y1={r + 1 - r * 0.42}
@@ -316,7 +385,6 @@ function Logo({ variant = "dark", size = "md" }) {
         strokeWidth="1.2"
         strokeLinecap="round"
       />
-      {/* Knife blade */}
       <path
         d={`M${r + 1 + r * 0.22} ${r + 1 - r * 0.42} Q${r + 1 + r * 0.38} ${
           r + 1 - r * 0.1
@@ -325,27 +393,23 @@ function Logo({ variant = "dark", size = "md" }) {
         stroke="rgba(255,255,255,0.75)"
         strokeWidth="1.2"
       />
-
-      {/* Wordmark */}
       <text
         x={wordmarkX}
         y={r * 0.95 + 1}
         fontFamily="'Playfair Display',Georgia,serif"
         fontWeight="900"
-        fontSize={wordmarkSize}
+        fontSize={s.emblem * 0.58}
         fill={textColor}
         letterSpacing="0.02em"
       >
-        Fahhhhh
-        <tspan fill={exclamColor}>!!!</tspan>
+        Fahhhhh<tspan fill={exclamColor}>!!!</tspan>
       </text>
-      {/* Tagline */}
       <text
         x={wordmarkX}
         y={r * 1.72 + 1}
         fontFamily="'Lato',Arial,sans-serif"
         fontWeight="700"
-        fontSize={taglineSize}
+        fontSize={s.emblem * 0.2}
         fill={taglineColor}
         letterSpacing="0.28em"
       >
@@ -355,17 +419,14 @@ function Logo({ variant = "dark", size = "md" }) {
   );
 }
 
-/* ─── SPLASH SCREEN ──────────────────────────────────────── */
 function SplashScreen({ onDone }) {
   const [phase, setPhase] = useState("in");
-
   useEffect(() => {
     const t1 = setTimeout(() => setPhase("hold"), 400);
     const t2 = setTimeout(() => setPhase("out"), 1600);
     const t3 = setTimeout(() => onDone(), 2200);
     return () => [t1, t2, t3].forEach(clearTimeout);
   }, [onDone]);
-
   return (
     <div
       style={{
@@ -383,7 +444,6 @@ function SplashScreen({ onDone }) {
             : "splashIn 0.4s ease forwards",
       }}
     >
-      {/* Outer decorative ring */}
       <div
         style={{
           width: "200px",
@@ -406,8 +466,6 @@ function SplashScreen({ onDone }) {
           position: "absolute",
         }}
       />
-
-      {/* Logo emblem — large centered */}
       <div
         style={{
           display: "flex",
@@ -417,7 +475,6 @@ function SplashScreen({ onDone }) {
           position: "relative",
         }}
       >
-        {/* Large emblem */}
         <svg
           width="100"
           height="100"
@@ -426,7 +483,6 @@ function SplashScreen({ onDone }) {
         >
           <circle cx="50" cy="50" r="48" fill="rgba(255,255,255,0.12)" />
           <circle cx="50" cy="50" r="38" fill="rgba(255,255,255,0.06)" />
-          {/* Fork */}
           <line
             x1="38"
             y1="24"
@@ -454,7 +510,6 @@ function SplashScreen({ onDone }) {
             strokeWidth="2.2"
             strokeLinecap="round"
           />
-          {/* Knife */}
           <line
             x1="62"
             y1="24"
@@ -471,8 +526,6 @@ function SplashScreen({ onDone }) {
             strokeWidth="2.2"
           />
         </svg>
-
-        {/* Wordmark */}
         <div
           style={{
             display: "flex",
@@ -514,7 +567,6 @@ function SplashScreen({ onDone }) {
             </span>
           ))}
         </div>
-
         <p
           style={{
             color: "rgba(255,255,255,0.5)",
@@ -533,7 +585,6 @@ function SplashScreen({ onDone }) {
   );
 }
 
-/* ─── HELPERS ────────────────────────────────────────────── */
 function Divider() {
   return (
     <div
@@ -570,7 +621,6 @@ function Divider() {
     </div>
   );
 }
-
 function SectionLabel({ label }) {
   return (
     <p
@@ -587,7 +637,6 @@ function SectionLabel({ label }) {
     </p>
   );
 }
-
 function Badge({ label }) {
   return (
     <span
@@ -607,13 +656,11 @@ function Badge({ label }) {
   );
 }
 
-/* ─── CART DRAWER ────────────────────────────────────────── */
 function CartDrawer({ cart, onClose, onUpdateQty, onRemove, onCheckout }) {
   const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
   const service = Math.round(subtotal * 0.05);
   const total = subtotal + service;
   const count = cart.reduce((s, i) => s + i.qty, 0);
-
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 500, display: "flex" }}>
       <div
@@ -676,7 +723,6 @@ function CartDrawer({ cart, onClose, onUpdateQty, onRemove, onCheckout }) {
             ✕
           </button>
         </div>
-
         <div
           style={{
             flex: 1,
@@ -823,7 +869,6 @@ function CartDrawer({ cart, onClose, onUpdateQty, onRemove, onCheckout }) {
             </div>
           ))}
         </div>
-
         {cart.length > 0 && (
           <div
             style={{
@@ -895,7 +940,6 @@ function CartDrawer({ cart, onClose, onUpdateQty, onRemove, onCheckout }) {
   );
 }
 
-/* ─── ORDER CONFIRM MODAL ────────────────────────────────── */
 function OrderConfirmModal({ order, onClose }) {
   const orderId = `FAH-${Date.now().toString().slice(-6)}`;
   return (
@@ -925,42 +969,32 @@ function OrderConfirmModal({ order, onClose }) {
         }}
       >
         <div
-          style={{ position: "relative", height: "370px", overflow: "hidden" }}
+          style={{
+            background: `linear-gradient(135deg,${C.maroon},${C.maroonDk})`,
+            padding: "52px 40px",
+            textAlign: "center",
+          }}
         >
-          <img
-            src="https://w0.peakpx.com/wallpaper/205/690/HD-wallpaper-d-boss-yajamana-challenging-star-darshan-dboss-kannada.jpg"
-            alt="Fine dining"
-            style={{ width: "100%", height: "150%", objectFit: "cover" }}
-          />
-          <div
+          <div style={{ fontSize: "2.8rem", marginBottom: "12px" }}>🎉</div>
+          <h2
             style={{
-              position: "absolute",
-              inset: 0,
-              background: `linear-gradient(to bottom,rgba(92,18,32,0.45) 0%,rgba(92,18,32,0.82) 100%)`,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              paddingBottom: "22px",
-              gap: "4px",
+              color: "#fff",
+              fontFamily: "'Playfair Display',serif",
+              fontSize: "1.85rem",
+              fontWeight: 900,
             }}
           >
-            <div style={{ fontSize: "2.2rem", marginBottom: "4px" }}>🎉</div>
-            <h2
-              style={{
-                color: "#fff",
-                fontFamily: "'Playfair Display',serif",
-                fontSize: "1.85rem",
-                fontWeight: 900,
-                lineHeight: 1.1,
-              }}
-            >
-              Order Confirmed!
-            </h2>
-            <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "1rem" }}>
-              ಇದ್ರೆ ನೆಮ್ಮದಿ ಆಗಿರ್ಬೇಕ 🙏
-            </p>
-          </div>
+            Order Confirmed!
+          </h2>
+          <p
+            style={{
+              color: "rgba(255,255,255,0.8)",
+              fontSize: "1rem",
+              marginTop: "6px",
+            }}
+          >
+            ಇದ್ರೆ ನೆಮ್ಮದಿ ಆಗಿರ್ಬೇಕ 🙏
+          </p>
         </div>
         <div style={{ padding: "26px 30px 30px" }}>
           <p
@@ -1078,7 +1112,6 @@ function OrderConfirmModal({ order, onClose }) {
   );
 }
 
-/* ─── NAVBAR ─────────────────────────────────────────────── */
 function Navbar({ activePage, setActivePage, cartCount, onCartOpen }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -1088,7 +1121,6 @@ function Navbar({ activePage, setActivePage, cartCount, onCartOpen }) {
     return () => window.removeEventListener("scroll", fn);
   }, []);
   const onHero = activePage === "Home";
-
   return (
     <nav
       style={{
@@ -1107,7 +1139,6 @@ function Navbar({ activePage, setActivePage, cartCount, onCartOpen }) {
         transition: "all 0.35s ease",
       }}
     >
-      {/* LOGO */}
       <button
         onClick={() => setActivePage("Home")}
         style={{
@@ -1121,12 +1152,11 @@ function Navbar({ activePage, setActivePage, cartCount, onCartOpen }) {
       >
         <Logo variant={scrolled || !onHero ? "dark" : "light"} size="sm" />
       </button>
-
       <ul
         className="desktop-nav"
         style={{
           display: "flex",
-          gap: "28px",
+          gap: "22px",
           listStyle: "none",
           margin: 0,
           padding: 0,
@@ -1141,8 +1171,8 @@ function Navbar({ activePage, setActivePage, cartCount, onCartOpen }) {
                 background: "none",
                 border: "none",
                 cursor: "pointer",
-                fontSize: "0.67rem",
-                letterSpacing: "0.2em",
+                fontSize: "0.63rem",
+                letterSpacing: "0.16em",
                 textTransform: "uppercase",
                 fontWeight: 700,
                 color:
@@ -1175,7 +1205,6 @@ function Navbar({ activePage, setActivePage, cartCount, onCartOpen }) {
           </li>
         ))}
       </ul>
-
       <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
         <button
           onClick={onCartOpen}
@@ -1230,7 +1259,6 @@ function Navbar({ activePage, setActivePage, cartCount, onCartOpen }) {
           )}
           <span>Cart</span>
         </button>
-
         <button
           onClick={() => setActivePage("Contact")}
           className="btn-outline book-btn"
@@ -1251,7 +1279,6 @@ function Navbar({ activePage, setActivePage, cartCount, onCartOpen }) {
         >
           Reserve Table
         </button>
-
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="hamburger"
@@ -1266,7 +1293,6 @@ function Navbar({ activePage, setActivePage, cartCount, onCartOpen }) {
           {menuOpen ? "✕" : "☰"}
         </button>
       </div>
-
       {menuOpen && (
         <div
           style={{
@@ -1311,7 +1337,6 @@ function Navbar({ activePage, setActivePage, cartCount, onCartOpen }) {
   );
 }
 
-/* ─── DISH CARD ──────────────────────────────────────────── */
 function DishCard({ dish, onAddToCart, cartQty }) {
   const [added, setAdded] = useState(false);
   const handleAdd = () => {
@@ -1422,7 +1447,6 @@ function DishCard({ dish, onAddToCart, cartQty }) {
   );
 }
 
-/* ─── HOME PAGE ──────────────────────────────────────────── */
 function Home({ setActivePage, cart, onAddToCart }) {
   const [activeT, setActiveT] = useState(0);
   useEffect(() => {
@@ -1433,10 +1457,8 @@ function Home({ setActivePage, cart, onAddToCart }) {
     return () => clearInterval(t);
   }, []);
   const getQty = (id) => cart.find((i) => i.id === id)?.qty || 0;
-
   return (
     <div style={{ background: C.bg }}>
-      {/* HERO */}
       <section
         style={{
           position: "relative",
@@ -1510,8 +1532,6 @@ function Home({ setActivePage, cart, onAddToCart }) {
               }}
             />
           </div>
-
-          {/* Hero Logo */}
           <div
             style={{
               display: "flex",
@@ -1521,7 +1541,6 @@ function Home({ setActivePage, cart, onAddToCart }) {
           >
             <Logo variant="light" size="lg" />
           </div>
-
           <p
             style={{
               color: "rgba(255,255,255,0.76)",
@@ -1658,8 +1677,6 @@ function Home({ setActivePage, cart, onAddToCart }) {
           </div>
         </div>
       </section>
-
-      {/* FEATURED DISHES */}
       <section
         style={{ padding: "88px 40px", maxWidth: "1240px", margin: "0 auto" }}
       >
@@ -1727,8 +1744,6 @@ function Home({ setActivePage, cart, onAddToCart }) {
           </button>
         </div>
       </section>
-
-      {/* WHY US */}
       <section
         style={{
           padding: "72px 40px",
@@ -1800,8 +1815,6 @@ function Home({ setActivePage, cart, onAddToCart }) {
           </div>
         </div>
       </section>
-
-      {/* TESTIMONIALS */}
       <section style={{ padding: "88px 40px" }}>
         <div
           style={{ maxWidth: "680px", margin: "0 auto", textAlign: "center" }}
@@ -1882,14 +1895,12 @@ function Home({ setActivePage, cart, onAddToCart }) {
   );
 }
 
-/* ─── MENU PAGE ──────────────────────────────────────────── */
 function Menu({ cart, onAddToCart }) {
   const [filter, setFilter] = useState("All");
   const cats = ["All", "Starters", "Mains", "Desserts"];
   const filtered =
     filter === "All" ? DISHES : DISHES.filter((d) => d.category === filter);
   const getQty = (id) => cart.find((i) => i.id === id)?.qty || 0;
-
   return (
     <div style={{ background: C.bg, paddingTop: "80px" }}>
       <section
@@ -1979,7 +1990,6 @@ function Menu({ cart, onAddToCart }) {
   );
 }
 
-/* ─── ABOUT PAGE ─────────────────────────────────────────── */
 function About() {
   return (
     <div style={{ background: C.bg, paddingTop: "80px" }}>
@@ -2208,7 +2218,6 @@ function About() {
   );
 }
 
-/* ─── GALLERY PAGE ───────────────────────────────────────── */
 function Gallery() {
   const [filter, setFilter] = useState("All");
   const [lightbox, setLightbox] = useState(null);
@@ -2217,7 +2226,6 @@ function Gallery() {
     filter === "All"
       ? PORTFOLIO_ITEMS
       : PORTFOLIO_ITEMS.filter((i) => i.category === filter);
-
   return (
     <div style={{ background: C.bg, paddingTop: "80px" }}>
       <section
@@ -2431,7 +2439,6 @@ function Gallery() {
   );
 }
 
-/* ─── CONTACT PAGE ───────────────────────────────────────── */
 function Contact() {
   const [form, setForm] = useState({
     name: "",
@@ -2460,7 +2467,6 @@ function Contact() {
     fontFamily: "'Lato',sans-serif",
     boxSizing: "border-box",
   };
-
   return (
     <div style={{ background: C.bg, paddingTop: "80px" }}>
       <section
@@ -2825,7 +2831,517 @@ function Contact() {
   );
 }
 
-/* ─── FOOTER ─────────────────────────────────────────────── */
+/* ─── FAQ ACCORDION ITEM ─────────────────────────────────── */
+function FAQItem({ faq }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className="faq-item"
+      style={{
+        border: `1px solid ${open ? C.maroon : C.border}`,
+        borderRadius: "12px",
+        overflow: "hidden",
+        background: open ? C.card : C.surface,
+        transition: "all 0.3s ease",
+      }}
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        style={{
+          width: "100%",
+          padding: "22px 28px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "16px",
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          textAlign: "left",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "14px",
+            flex: 1,
+          }}
+        >
+          <span style={{ fontSize: "1.3rem", flexShrink: 0 }}>{faq.icon}</span>
+          <span
+            style={{
+              fontFamily: "'Playfair Display',serif",
+              color: open ? C.maroon : C.text,
+              fontSize: "1rem",
+              fontWeight: 700,
+              lineHeight: 1.4,
+              transition: "color 0.3s",
+            }}
+          >
+            {faq.question}
+          </span>
+        </div>
+        <div
+          style={{
+            width: "28px",
+            height: "28px",
+            borderRadius: "50%",
+            border: `1.5px solid ${open ? C.maroon : C.border}`,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+            color: open ? C.maroon : C.muted,
+            fontSize: "1.1rem",
+            fontWeight: 700,
+            transition: "all 0.3s",
+            transform: open ? "rotate(45deg)" : "rotate(0deg)",
+          }}
+        >
+          +
+        </div>
+      </button>
+      {open && (
+        <div
+          style={{
+            padding: "0 28px 24px 70px",
+            animation: "faqOpen 0.25s ease",
+          }}
+        >
+          <p style={{ color: C.muted, fontSize: "0.92rem", lineHeight: 1.8 }}>
+            {faq.answer}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ─── HELP PAGE ──────────────────────────────────────────── */
+function Help({ setActivePage }) {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredFaqs = FAQS.filter((faq) => {
+    const matchesCategory =
+      activeCategory === "All" || faq.category === activeCategory;
+    const matchesSearch =
+      searchQuery === "" ||
+      faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      faq.answer.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  return (
+    <div style={{ background: C.bg, paddingTop: "80px" }}>
+      {/* Hero Banner */}
+      <section
+        style={{
+          background: `linear-gradient(135deg,${C.maroon} 0%,${C.maroonDk} 100%)`,
+          padding: "80px 40px 72px",
+          textAlign: "center",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: "-60px",
+            right: "-60px",
+            width: "280px",
+            height: "280px",
+            borderRadius: "50%",
+            border: "1px solid rgba(255,255,255,0.07)",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: "-80px",
+            left: "-40px",
+            width: "220px",
+            height: "220px",
+            borderRadius: "50%",
+            border: "1px solid rgba(255,255,255,0.05)",
+          }}
+        />
+        <div
+          style={{ position: "relative", maxWidth: "640px", margin: "0 auto" }}
+        >
+          <div style={{ fontSize: "2.8rem", marginBottom: "16px" }}>💬</div>
+          <div
+            style={{
+              color: "rgba(255,179,198,0.9)",
+              fontSize: "0.62rem",
+              letterSpacing: "0.32em",
+              textTransform: "uppercase",
+              fontWeight: 700,
+              marginBottom: "12px",
+            }}
+          >
+            Help & Support
+          </div>
+          <h1
+            style={{
+              fontFamily: "'Playfair Display',serif",
+              color: "#fff",
+              fontSize: "clamp(2.4rem,7vw,3.5rem)",
+              fontWeight: 900,
+              lineHeight: 1.1,
+              marginBottom: "16px",
+            }}
+          >
+            How Can We <em style={{ color: "#FFB3C6" }}>Help?</em>
+          </h1>
+          <p
+            style={{
+              color: "rgba(255,255,255,0.72)",
+              fontSize: "1rem",
+              lineHeight: 1.7,
+              marginBottom: "36px",
+            }}
+          >
+            Find answers to our most frequently asked questions below. Can't
+            find what you're looking for? Reach out and we'll be happy to
+            assist.
+          </p>
+          {/* Search */}
+          <div
+            style={{
+              position: "relative",
+              maxWidth: "480px",
+              margin: "0 auto",
+            }}
+          >
+            <span
+              style={{
+                position: "absolute",
+                left: "18px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                fontSize: "1rem",
+                pointerEvents: "none",
+              }}
+            >
+              🔍
+            </span>
+            <input
+              type="text"
+              placeholder="Search questions..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{
+                width: "100%",
+                padding: "16px 20px 16px 50px",
+                border: "none",
+                borderRadius: "50px",
+                fontSize: "0.92rem",
+                background: "#fff",
+                color: C.text,
+                outline: "none",
+                boxShadow: "0 8px 28px rgba(44,16,21,0.25)",
+                fontFamily: "'Lato',sans-serif",
+                boxSizing: "border-box",
+              }}
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                style={{
+                  position: "absolute",
+                  right: "16px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  color: C.muted,
+                  fontSize: "1rem",
+                }}
+              >
+                ✕
+              </button>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Category Pills */}
+      <section
+        style={{
+          background: C.card,
+          borderBottom: `1px solid ${C.border}`,
+          padding: "20px 40px",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "900px",
+            margin: "0 auto",
+            display: "flex",
+            gap: "10px",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          {FAQ_CATEGORIES.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              style={{
+                padding: "8px 22px",
+                border: `1px solid ${
+                  activeCategory === cat ? C.maroon : C.border
+                }`,
+                background: activeCategory === cat ? C.maroon : C.surface,
+                color: activeCategory === cat ? "#fff" : C.muted,
+                fontSize: "0.68rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                fontWeight: 700,
+                cursor: "pointer",
+                borderRadius: "50px",
+                transition: "all 0.3s",
+                fontFamily: "'Lato',sans-serif",
+              }}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ Content */}
+      <section
+        style={{
+          maxWidth: "900px",
+          margin: "0 auto",
+          padding: "60px 40px 80px",
+        }}
+      >
+        {filteredFaqs.length > 0 ? (
+          activeCategory === "All" && searchQuery === "" ? (
+            FAQ_CATEGORIES.filter((c) => c !== "All").map((cat) => {
+              const catFaqs = FAQS.filter((f) => f.category === cat);
+              return (
+                <div key={cat} style={{ marginBottom: "52px" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "14px",
+                      marginBottom: "22px",
+                    }}
+                  >
+                    <span style={{ fontSize: "1.4rem" }}>
+                      {catFaqs[0]?.icon}
+                    </span>
+                    <div>
+                      <p
+                        style={{
+                          color: C.maroonLt,
+                          fontSize: "0.58rem",
+                          letterSpacing: "0.3em",
+                          textTransform: "uppercase",
+                          fontWeight: 700,
+                          marginBottom: "2px",
+                        }}
+                      >
+                        Category
+                      </p>
+                      <h3
+                        style={{
+                          fontFamily: "'Playfair Display',serif",
+                          color: C.text,
+                          fontSize: "1.35rem",
+                          fontWeight: 700,
+                        }}
+                      >
+                        {cat}
+                      </h3>
+                    </div>
+                    <div
+                      style={{
+                        flex: 1,
+                        height: "1px",
+                        background: C.border,
+                        marginLeft: "8px",
+                      }}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "12px",
+                    }}
+                  >
+                    {catFaqs.map((faq, i) => (
+                      <FAQItem key={i} faq={faq} />
+                    ))}
+                  </div>
+                </div>
+              );
+            })
+          ) : (
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "12px" }}
+            >
+              {filteredFaqs.map((faq, i) => (
+                <FAQItem key={i} faq={faq} />
+              ))}
+            </div>
+          )
+        ) : (
+          <div
+            style={{ textAlign: "center", padding: "80px 0", color: C.muted }}
+          >
+            <div style={{ fontSize: "3rem", marginBottom: "16px" }}>🔍</div>
+            <h3
+              style={{
+                fontFamily: "'Playfair Display',serif",
+                color: C.text,
+                fontSize: "1.4rem",
+                fontWeight: 700,
+                marginBottom: "10px",
+              }}
+            >
+              No results found
+            </h3>
+            <p style={{ fontSize: "0.9rem", lineHeight: 1.7 }}>
+              We couldn't find a match for "<strong>{searchQuery}</strong>". Try
+              a different keyword or browse by category.
+            </p>
+            <button
+              onClick={() => {
+                setSearchQuery("");
+                setActiveCategory("All");
+              }}
+              className="btn-primary"
+              style={{
+                marginTop: "24px",
+                padding: "12px 32px",
+                background: C.maroon,
+                color: "#fff",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "0.72rem",
+                letterSpacing: "0.2em",
+                textTransform: "uppercase",
+                fontWeight: 700,
+                borderRadius: "8px",
+              }}
+            >
+              Clear Search
+            </button>
+          </div>
+        )}
+
+        {/* CTA block */}
+        <div
+          style={{
+            marginTop: "60px",
+            background: `linear-gradient(135deg,${C.maroon} 0%,${C.maroonDk} 100%)`,
+            borderRadius: "16px",
+            padding: "44px 48px",
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "24px",
+          }}
+        >
+          <div>
+            <p
+              style={{
+                color: "rgba(255,255,255,0.7)",
+                fontSize: "0.62rem",
+                letterSpacing: "0.3em",
+                textTransform: "uppercase",
+                fontWeight: 700,
+                marginBottom: "8px",
+              }}
+            >
+              Still have questions?
+            </p>
+            <h3
+              style={{
+                fontFamily: "'Playfair Display',serif",
+                color: "#fff",
+                fontSize: "1.6rem",
+                fontWeight: 700,
+                marginBottom: "8px",
+              }}
+            >
+              We're Here for You
+            </h3>
+            <p
+              style={{
+                color: "rgba(255,255,255,0.7)",
+                fontSize: "0.88rem",
+                lineHeight: 1.65,
+              }}
+            >
+              Call us at{" "}
+              <strong style={{ color: "#FFB3C6" }}>+91 22 4001 9999</strong> or
+              email{" "}
+              <strong style={{ color: "#FFB3C6" }}>reserve@fahhhh.in</strong>
+            </p>
+          </div>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+            <button
+              onClick={() => setActivePage("Contact")}
+              style={{
+                padding: "13px 28px",
+                background: "#fff",
+                color: C.maroon,
+                border: "none",
+                cursor: "pointer",
+                fontSize: "0.7rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                fontWeight: 700,
+                borderRadius: "8px",
+                transition: "opacity 0.3s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.9")}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+            >
+              Contact Us →
+            </button>
+            <button
+              onClick={() => setActivePage("Contact")}
+              style={{
+                padding: "13px 28px",
+                background: "transparent",
+                color: "#fff",
+                border: "1px solid rgba(255,255,255,0.5)",
+                cursor: "pointer",
+                fontSize: "0.7rem",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                fontWeight: 700,
+                borderRadius: "8px",
+                transition: "background 0.3s",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.background = "rgba(255,255,255,0.12)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.background = "transparent")
+              }
+            >
+              Reserve Table
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 function Footer({ setActivePage }) {
   return (
     <footer style={{ background: C.maroonDk, padding: "60px 40px" }}>
@@ -2839,7 +3355,6 @@ function Footer({ setActivePage }) {
           }}
         >
           <div>
-            {/* Footer logo — light variant */}
             <div style={{ marginBottom: "14px" }}>
               <Logo variant="light" size="sm" />
             </div>
@@ -2959,14 +3474,12 @@ function Footer({ setActivePage }) {
   );
 }
 
-/* ─── APP ROOT ───────────────────────────────────────────── */
 export default function App() {
   const [splash, setSplash] = useState(true);
   const [activePage, setActivePage] = useState("Home");
   const [cart, setCart] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [confirmedOrder, setConfirmedOrder] = useState(null);
-
   const navigate = useCallback((page) => {
     setActivePage(page);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -2997,11 +3510,9 @@ export default function App() {
     setCart([]);
     setCartOpen(false);
   }, [cart]);
-
   const cartCount = cart.reduce((s, i) => s + i.qty, 0);
-  const PAGE_MAP = { Home, Menu, About, Gallery, Contact };
+  const PAGE_MAP = { Home, Menu, About, Gallery, Contact, Help };
   const PageComponent = PAGE_MAP[activePage] || Home;
-
   return (
     <div style={{ minHeight: "100vh", background: C.bg }}>
       <style>{GLOBAL_CSS}</style>
