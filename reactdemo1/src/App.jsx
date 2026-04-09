@@ -957,8 +957,8 @@ function OrderConfirmModal({ order, onClose }) {
             >
               Order Confirmed!
             </h2>
-            <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "0.86rem" }}>
-              Thank you for dining with Fahhhhh!!!
+            <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "1rem" }}>
+              ಇದ್ರೆ ನೆಮ್ಮದಿ ಆಗಿರ್ಬೇಕ 🙏
             </p>
           </div>
         </div>
