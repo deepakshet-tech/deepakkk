@@ -118,7 +118,7 @@ const TESTIMONIALS = [
     name: "Priya Mehta",
     role: "Food Critic, Condé Nast",
     quote:
-      "Fahhhhh!!! doesn't just serve food — it orchestrates an entire sensory performance. A transcendent evening every single time.",
+      "Saka Beka doesn't just serve food — it orchestrates an entire sensory performance. A transcendent evening every single time.",
     stars: 5,
   },
   {
@@ -132,7 +132,7 @@ const TESTIMONIALS = [
     name: "Aisha Kapoor",
     role: "Travel Blogger",
     quote:
-      "If I could only eat at one restaurant for the rest of my life, it would be Fahhhhh!!! — bold claim, absolutely meant.",
+      "If I could only eat at one restaurant for the rest of my life, it would be Saka Beka — bold claim, absolutely meant.",
     stars: 5,
   },
 ];
@@ -217,7 +217,7 @@ const FAQS = [
     icon: "📅",
     question: "Can I modify or cancel my reservation?",
     answer:
-      "Yes, reservations can be modified or cancelled up to 24 hours before your booking with no charge. Cancellations made within 24 hours may incur a cancellation fee of ₹500 per guest. To make changes, please call us at +91 22 4001 9999 or email reserve@fahhhh.in.",
+      "Yes, reservations can be modified or cancelled up to 24 hours before your booking with no charge. Cancellations made within 24 hours may incur a cancellation fee of ₹500 per guest. To make changes, please call us at +91 22 4001 9999 or email reserve@sakabeka.in.",
   },
   {
     category: "Dining",
@@ -229,7 +229,7 @@ const FAQS = [
   {
     category: "Dining",
     icon: "🍽️",
-    question: "What is the dress code at Fahhhhh!!!?",
+    question: "What is the dress code at Saka Beka?",
     answer:
       "We maintain a smart-casual to formal dress code to preserve the ambience our guests expect. We kindly request no athletic wear, shorts, or flip-flops. Gentlemen are encouraged to wear collared shirts; formal Indian attire is always welcome and celebrated. Our team may politely decline entry to guests not meeting the dress standard.",
   },
@@ -238,7 +238,7 @@ const FAQS = [
     icon: "🍽️",
     question: "Is the restaurant child-friendly?",
     answer:
-      "Fahhhhh!!! is designed primarily as an adult fine-dining experience. Children above the age of 10 are welcome, provided they are comfortable in a formal dining setting. We do not offer a dedicated children's menu but can adapt dishes upon request. We appreciate your understanding in maintaining a tranquil atmosphere for all guests.",
+      "Saka Beka is designed primarily as an adult fine-dining experience. Children above the age of 10 are welcome, provided they are comfortable in a formal dining setting. We do not offer a dedicated children's menu but can adapt dishes upon request. We appreciate your understanding in maintaining a tranquil atmosphere for all guests.",
   },
   {
     category: "Orders & Payment",
@@ -252,14 +252,14 @@ const FAQS = [
     icon: "💳",
     question: "Can I pre-order dishes or arrange a set menu for a group?",
     answer:
-      "Yes! For groups of 8 or more, we offer bespoke set menus curated by Chef Laurent to suit your preferences and budget. Pre-ordering selected dishes is also available for large parties. Please reach out to our events team at reserve@fahhhh.in at least 5 days prior to your visit to discuss your requirements.",
+      "Yes! For groups of 8 or more, we offer bespoke set menus curated by Chef Laurent to suit your preferences and budget. Pre-ordering selected dishes is also available for large parties. Please reach out to our events team at reserve@sakabeka.in at least 5 days prior to your visit to discuss your requirements.",
   },
   {
     category: "Events & Private Dining",
     icon: "🥂",
     question: "Do you host private events and corporate dinners?",
     answer:
-      "Yes, we have a dedicated private dining room — The Moreau Suite — that seats up to 30 guests, perfect for corporate dinners, milestone celebrations, product launches, and intimate gatherings. Full AV equipment, customised menus, and a dedicated butler service are available. Enquire via reserve@fahhhh.in for packages and pricing.",
+      "Yes, we have a dedicated private dining room — The Moreau Suite — that seats up to 30 guests, perfect for corporate dinners, milestone celebrations, product launches, and intimate gatherings. Full AV equipment, customised menus, and a dedicated butler service are available. Enquire via reserve@sakabeka.in for packages and pricing.",
   },
   {
     category: "Events & Private Dining",
@@ -338,7 +338,7 @@ function Logo({ variant = "dark", size = "md" }) {
       height={svgH}
       viewBox={`0 0 ${s.total} ${svgH}`}
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="Fahhhhh!!! Fine Dining"
+      aria-label="Saka Beka Fine Dining"
     >
       <circle cx={r + 1} cy={r + 1} r={r} fill={C.maroon} />
       <circle
@@ -402,7 +402,7 @@ function Logo({ variant = "dark", size = "md" }) {
         fill={textColor}
         letterSpacing="0.02em"
       >
-        Fahhhhh<tspan fill={exclamColor}>!!!</tspan>
+        Saka Beka
       </text>
       <text
         x={wordmarkX}
@@ -534,7 +534,7 @@ function SplashScreen({ onDone }) {
             animation: "letterPop 0.5s ease 0.3s both",
           }}
         >
-          {["F", "a", "h", "h", "h", "h", "h"].map((l, i) => (
+          {["S", "a", "k", "a", " ", "B", "e", "k", "a"].map((l, i) => (
             <span
               key={i}
               style={{
@@ -547,23 +547,7 @@ function SplashScreen({ onDone }) {
                 lineHeight: 1,
               }}
             >
-              {l}
-            </span>
-          ))}
-          {["!", "!", "!"].map((l, i) => (
-            <span
-              key={`ex-${i}`}
-              style={{
-                color: "#FFB3C6",
-                fontFamily: "'Playfair Display',Georgia,serif",
-                fontSize: "2.2rem",
-                fontWeight: 900,
-                animation: `letterPop 0.38s ease ${(i + 7) * 0.05 + 0.3}s both`,
-                display: "inline-block",
-                lineHeight: 1,
-              }}
-            >
-              {l}
+              {l === " " ? "\u00A0" : l}
             </span>
           ))}
         </div>
@@ -941,7 +925,7 @@ function CartDrawer({ cart, onClose, onUpdateQty, onRemove, onCheckout }) {
 }
 
 function OrderConfirmModal({ order, onClose }) {
-  const orderId = `FAH-${Date.now().toString().slice(-6)}`;
+  const orderId = `SAKA-${Date.now().toString().slice(-6)}`;
   return (
     <div
       style={{
@@ -1764,7 +1748,7 @@ function Home({ setActivePage, cart, onAddToCart }) {
                 marginBottom: "4px",
               }}
             >
-              Why Fahhhhh!!!
+              Why Saka Beka
             </h2>
             <Divider />
           </div>
@@ -2690,7 +2674,7 @@ function Contact() {
                 fontWeight: 700,
               }}
             >
-              Fahhhhh!!!
+              Saka Beka
             </p>
             <p
               style={{
@@ -2776,8 +2760,8 @@ function Contact() {
           >
             {[
               ["📞", "Reservations", "+91 22 4001 9999"],
-              ["✉️", "Email", "reserve@fahhhh.in"],
-              ["📸", "Instagram", "@fahhhh.mumbai"],
+              ["✉️", "Email", "reserve@sakabeka.in"],
+              ["📸", "Instagram", "@sakabeka.mumbai"],
             ].map(([icon, lbl, val]) => (
               <div
                 key={lbl}
@@ -3287,7 +3271,7 @@ function Help({ setActivePage }) {
               Call us at{" "}
               <strong style={{ color: "#FFB3C6" }}>+91 22 4001 9999</strong> or
               email{" "}
-              <strong style={{ color: "#FFB3C6" }}>reserve@fahhhh.in</strong>
+              <strong style={{ color: "#FFB3C6" }}>reserve@sakabeka.in</strong>
             </p>
           </div>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
@@ -3437,7 +3421,7 @@ function Footer({ setActivePage }) {
                 "12, Napean Sea Road, Malabar Hill",
                 "Mumbai, Maharashtra 400 006",
                 "+91 22 4001 9999",
-                "reserve@fahhhh.in",
+                "reserve@sakabeka.in",
               ].map((l, i) => (
                 <p
                   key={i}
@@ -3463,7 +3447,7 @@ function Footer({ setActivePage }) {
           }}
         >
           <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.72rem" }}>
-            © 2025 Fahhhhh!!! Fine Dining. All rights reserved.
+            © 2025 Saka Beka Fine Dining. All rights reserved.
           </p>
           <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.72rem" }}>
             Crafted with passion in Mumbai 🍷
